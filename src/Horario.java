@@ -1,0 +1,43 @@
+/**
+ * Clase Horario para poder utilizar el horario
+ * @author Andres Urizar
+ * @author Rodrigo Samayoa
+ * @author Guillermo Sandoval
+ * @version 29/09/17	
+ */
+
+public class Horario {
+	private String[][] clases; //Matríz para guardar las clases
+	/**
+	 * Constructor de la clase
+	 */
+	public Horario()
+	{
+		clases = new String[7][11];
+		for (int j=0;j<7;j++){
+			for(int i=0;i<11;i++){
+				clases[j][i]=" ";
+			}
+		}
+	}
+	/**
+	 * método para ingresar una clase al horario, seguún la hora y el dia
+	 * @param dia
+	 * @param hora
+	 * @param clase
+	 */
+	public void ingresarClase(int dia,int hora,String clase)
+	{
+		clases[dia][hora] = clase;
+	}
+	/**
+	 * Método para mostrar la clase en su respectivo dia y hora.
+	 * @param dia
+	 * @param hora
+	 * @return la clase del dia seleccionado y de esa hora.
+	 */
+	public String mostrarClase(int dia,int hora)
+	{
+		return clases[dia][hora];
+	}
+}
