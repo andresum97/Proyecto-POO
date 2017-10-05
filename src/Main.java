@@ -3,7 +3,14 @@
  * @author Andres Urizar
  * @author Rodrigo Samayoa
  * @author Guillermo Sandoval
- * @version 29/09/17	
+ * @version 29/09/17
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 
 import java.awt.EventQueue;
