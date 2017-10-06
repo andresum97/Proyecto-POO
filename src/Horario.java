@@ -4,21 +4,6 @@
  * @author Rodrigo Samayoa
  * @author Guillermo Sandoval
  * @version 29/09/17	
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
  */
 
 public class Horario {
