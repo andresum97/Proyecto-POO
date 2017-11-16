@@ -4,10 +4,14 @@
  * @author Rodrigo Samayoa
  * @author Guillermo Sandoval
  * @version 29/09/17	
+<<<<<<< HEAD
+=======
+ * 
+>>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
  */
 
 public class Horario {
-	private String[][] clases; //Matríz para guardar las clases
+	private String[][] clases; //Matrï¿½z para guardar las clases
 	/**
 	 * Constructor de la clase
 	 */
@@ -21,7 +25,7 @@ public class Horario {
 		}
 	}
 	/**
-	 * método para ingresar una clase al horario, seguún la hora y el dia
+	 * mï¿½todo para ingresar una clase al horario, seguï¿½n la hora y el dia
 	 * @param dia
 	 * @param hora
 	 * @param clase
@@ -31,7 +35,7 @@ public class Horario {
 		clases[dia][hora] = clase;
 	}
 	/**
-	 * Método para mostrar la clase en su respectivo dia y hora.
+	 * Mï¿½todo para mostrar la clase en su respectivo dia y hora.
 	 * @param dia
 	 * @param hora
 	 * @return la clase del dia seleccionado y de esa hora.
