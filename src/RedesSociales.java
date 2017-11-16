@@ -31,10 +31,37 @@ public class RedesSociales {
 	
 	public RedesSociales()
 	{
-		Timer timer = new Timer();
-		
-		
+		Timer timer = new Timer();	
 	}
+	
+/*
+ * ExecutorService service = Executors.newSingleThreadExecutor();
+
+try {
+    Runnable r = new Runnable() {
+        @Override
+        public void run() {
+            // Database task
+        }
+    };
+
+    Future<?> f = service.submit(r);
+
+    f.get(2, TimeUnit.MINUTES);     // attempt the task for two minutes
+}
+catch (final InterruptedException e) {
+    // The thread was interrupted during sleep, wait or join
+}
+catch (final TimeoutException e) {
+    // Took too long!
+}
+catch (final ExecutionException e) {
+    // An exception from within the Runnable task
+}
+finally {
+    service.shutdown();
+}
+ */
 	/*
 	 * Basicamente cada uno de los timer se encarga de guardar cuanto tiempo
 	 * ha transcurrido en cada una de las redes sociales ya que estos solo se pueden
@@ -42,7 +69,8 @@ public class RedesSociales {
 	 */
 	public void timerFB()
 	{
-		
+		timer.schedule(new TimerTask() {
+			}, 2*60*1000);	
 	}
 	public void timerInst()
 	{

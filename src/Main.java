@@ -48,7 +48,7 @@ public class Main {
 	private JLabel Carnet;
 	private JLabel Semestre;
 	private JLabel lblAoEnCurso;
-	private JLabel lblNewLabel_1;
+	private JLabel lblCarrera;
 	private JLabel lblCarnet;
 	private JLabel lblNombre; 
 	private JComboBox comboBox;
@@ -59,8 +59,14 @@ public class Main {
 	private JLabel opnumero;
 	private JToggleButton modo;
 	private JEditorPane editorPane2;
+	private JButton btnRedes;
 	
 
+	public void salir()
+	{
+		System.exit(0);
+	}
+	
 	/**
 	 * Launch the application.
 	 */
@@ -77,7 +83,7 @@ public class Main {
 		});
 	}
 	/**
-	 * Método para instanciar textfields para el horario
+	 * Mï¿½todo para instanciar textfields para el horario
 	 */
 	public void crearText()
 	{
@@ -99,7 +105,7 @@ public class Main {
 		}
 	}
 	/**
-	 * Método para instanciar los labels para escribir el dia y la hora
+	 * Mï¿½todo para instanciar los labels para escribir el dia y la hora
 	 */
 	public void crearLabel()
 	{
@@ -173,16 +179,16 @@ public class Main {
 		frmProgramaDeOrganizacin = new JFrame();
 		frmProgramaDeOrganizacin.setTitle("Programa de organizaci\u00F3n de estudiantes");
 		frmProgramaDeOrganizacin.getContentPane().setBackground(new Color(255, 255, 153));
-		frmProgramaDeOrganizacin.setBounds(100, 100, 835, 441);
+		frmProgramaDeOrganizacin.setBounds(100, 100, 844, 470);
 		frmProgramaDeOrganizacin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmProgramaDeOrganizacin.getContentPane().setLayout(null);
 		
 		crearText();
 		crearLabel();
+		frmProgramaDeOrganizacin.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 128, 0));
 		panel.setBounds(0, 0, 819, 50);
+		panel.setBackground(new Color(0, 128, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -217,11 +223,12 @@ public class Main {
 		panel.add(Semestre);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 49, 126, 363);
 		panel_1.setBackground(new Color(50, 205, 50));
 		panel_1.setForeground(new Color(0, 0, 0));
-		panel_1.setBounds(0, 49, 126, 363);
 		frmProgramaDeOrganizacin.getContentPane().add(panel_1);
 		JButton btnIngresar = new JButton("Menu principal");
+		btnIngresar.setBounds(-5, 5, 137, 29);
 		btnIngresar.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnIngresar.setBorderPainted(false);
 		btnIngresar.setDefaultCapable(false);
@@ -243,7 +250,7 @@ public class Main {
 				editorPane.setText("Recordatorios secundarios"+"\n"+recordatorio.mostrarRecordatorio(2));
 				editorPane2.setVisible(true);
 				editorPane2.setText("Recordatorios de prioridad"+"\n"+recordatorio.mostrarRecordatorio(1));
-				lblNewLabel_1.setVisible(false);
+				lblCarrera.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -261,9 +268,11 @@ public class Main {
 				}
 			}
 		});
+		panel_1.setLayout(null);
 		panel_1.add(btnIngresar);
 		
 		JButton btnHorario = new JButton("Horario"); //Boton de horario
+		btnHorario.setBounds(17, 39, 91, 29);
 		btnHorario.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnHorario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -283,7 +292,7 @@ public class Main {
 				textField_4.setVisible(false);
 				editorPane.setVisible(false);
 				editorPane2.setVisible(false);
-				lblNewLabel_1.setVisible(false);
+				lblCarrera.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -308,6 +317,7 @@ public class Main {
 		panel_1.add(btnHorario);
 		
 		JButton btnRecordatorios = new JButton("Recordatorios");
+		btnRecordatorios.setBounds(-3, 73, 133, 29);
 		btnRecordatorios.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnRecordatorios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -325,7 +335,7 @@ public class Main {
 					textField_4.setVisible(true);
 					editorPane.setVisible(false);
 					editorPane2.setVisible(false);
-					lblNewLabel_1.setVisible(false);
+					lblCarrera.setVisible(false);
 					for(int i=0;i<7;i++)
 					{
 						for(int j=0;j<11;j++)
@@ -349,6 +359,7 @@ public class Main {
 		panel_1.add(btnRecordatorios);
 		
 		JButton btnAgenda = new JButton("Agenda");
+		btnAgenda.setBounds(16, 107, 93, 29);
 		btnAgenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(opcion == 0) {
@@ -368,8 +379,8 @@ public class Main {
 				editorPane.setVisible(true);
 				editorPane.setText("");
 				editorPane2.setVisible(false);
-				lblNewLabel_1.setText("Ingrese un evento");
-				lblNewLabel_1.setVisible(true);
+				lblCarrera.setText("Ingrese un evento");
+				lblCarrera.setVisible(true);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -394,7 +405,46 @@ public class Main {
 		btnAgenda.setDefaultCapable(false);
 		panel_1.add(btnAgenda);
 		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBackground(Color.WHITE);
+		btnSalir.setBorderPainted(false);
+		btnSalir.setContentAreaFilled(false);
+		btnSalir.setDefaultCapable(false);
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				salir();
+			}
+		});
+		btnSalir.setBounds(-5, 318, 133, 29);
+		panel_1.add(btnSalir);
+		
+		btnRedes = new JButton("Redes Sociales");
+		btnRedes.setBackground(new Color(240, 240, 240));
+		btnRedes.setBorderPainted(false);
+		btnRedes.setContentAreaFilled(false);
+		btnRedes.setDefaultCapable(false);
+		btnRedes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblNewLabel.setVisible(false);
+				lblNombre.setVisible(false);
+				lblCarnet.setVisible(false);
+				lblAoEnCurso.setVisible(false);
+				lblCarrera.setVisible(false);
+				
+				
+			}
+		});
+		
+		
+		
+		
+		btnRedes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRedes.setBounds(0, 144, 126, 42);
+		panel_1.add(btnRedes);
+		
 		btnGuardar = new JButton("Guardar");
+		btnGuardar.setBounds(720, 368, 89, 23);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(opcion == 0)
@@ -413,7 +463,7 @@ public class Main {
 					textField_2.setVisible(false);
 					textField_3.setVisible(false);
 					lblAoEnCurso.setVisible(false);
-					lblNewLabel_1.setVisible(false);
+					lblCarrera.setVisible(false);
 					lblCarnet.setVisible(false);
 					lblNombre.setVisible(false);
 					btnGuardar.setVisible(false);
@@ -462,7 +512,7 @@ public class Main {
 				{
 					if(comboBox_1.getSelectedIndex() == 0 || textField_4.getText() == null)
 					{
-						JOptionPane.showMessageDialog(null, "Debe marcar la importancia del recordatorio, o ingresar algún recordatorio");
+						JOptionPane.showMessageDialog(null, "Debe marcar la importancia del recordatorio, o ingresar algï¿½n recordatorio");
 					}else
 					{
 						String texto = textField_4.getText();
@@ -473,10 +523,10 @@ public class Main {
 				}
 			}
 		});
-		btnGuardar.setBounds(720, 368, 89, 23);
 		frmProgramaDeOrganizacin.getContentPane().add(btnGuardar);
 		
 		btnMostrar = new JButton("Mostrar");
+		btnMostrar.setBounds(621, 368, 89, 23);
 		btnMostrar.setVisible(false);
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -538,16 +588,16 @@ public class Main {
 					editorPane.setText(recordatorio.mostrarTodo());
 					}
 					catch(Exception exception) {
-						JOptionPane.showMessageDialog(null, "Debe ingresar un número para escoger opción");
+						JOptionPane.showMessageDialog(null, "Debe ingresar un nï¿½mero para escoger opciï¿½n");
 					}
 					
 				}
 			}
 		});
-		btnMostrar.setBounds(621, 368, 89, 23);
 		frmProgramaDeOrganizacin.getContentPane().add(btnMostrar);
 		
 		btnModificar = new JButton("Modificar");
+		btnModificar.setBounds(522, 368, 89, 23);
 		btnModificar.setVisible(false);
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -564,12 +614,11 @@ public class Main {
 				}
 			}
 		});
-		btnModificar.setBounds(522, 368, 89, 23);
 		frmProgramaDeOrganizacin.getContentPane().add(btnModificar);
 		
 		lblNombre = new JLabel("Nombre: ");
-		lblNombre.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNombre.setBounds(144, 61, 51, 15);
+		lblNombre.setFont(new Font("Arial", Font.PLAIN, 12));
 		frmProgramaDeOrganizacin.getContentPane().add(lblNombre);
 		
 		textField = new JTextField();
@@ -578,8 +627,8 @@ public class Main {
 		textField.setColumns(10);
 		
 		lblCarnet = new JLabel("Carnet:");
-		lblCarnet.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblCarnet.setBounds(504, 61, 46, 14);
+		lblCarnet.setFont(new Font("Arial", Font.PLAIN, 12));
 		frmProgramaDeOrganizacin.getContentPane().add(lblCarnet);
 		
 		textField_1 = new JTextField();
@@ -587,10 +636,10 @@ public class Main {
 		frmProgramaDeOrganizacin.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		lblNewLabel_1 = new JLabel("Carrera:");
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(144, 87, 118, 14);
-		frmProgramaDeOrganizacin.getContentPane().add(lblNewLabel_1);
+		lblCarrera = new JLabel("Carrera:");
+		lblCarrera.setBounds(144, 87, 118, 14);
+		lblCarrera.setFont(new Font("Arial", Font.PLAIN, 12));
+		frmProgramaDeOrganizacin.getContentPane().add(lblCarrera);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(194, 85, 224, 20);
@@ -598,8 +647,8 @@ public class Main {
 		textField_2.setColumns(10);
 		
 		lblAoEnCurso = new JLabel("Semestre:");
-		lblAoEnCurso.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblAoEnCurso.setBounds(504, 88, 75, 14);
+		lblAoEnCurso.setFont(new Font("Arial", Font.PLAIN, 12));
 		frmProgramaDeOrganizacin.getContentPane().add(lblAoEnCurso);
 		
 		textField_3 = new JTextField();
@@ -608,6 +657,7 @@ public class Main {
 		textField_3.setColumns(10);
 		
 		comboBox = new JComboBox();
+		comboBox.setBounds(136, 61, 151, 20);
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(comboBox.getSelectedIndex() == 1)
@@ -645,29 +695,29 @@ public class Main {
 		comboBox.setVisible(false);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Dia de la semana", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}));
 		comboBox.setToolTipText("");
-		comboBox.setBounds(136, 61, 151, 20);
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox);
 		
 		editorPane = new JEditorPane();
+		editorPane.setBounds(451, 71, 259, 275);
 		editorPane.setBackground(new Color(0, 191, 255));
 		editorPane.setVisible(false);
 		editorPane.setEditable(false);
-		editorPane.setBounds(451, 71, 259, 275);
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane);
 		
 		textField_4 = new JTextField();
-		textField_4.setVisible(false);
 		textField_4.setBounds(136, 112, 282, 20);
+		textField_4.setVisible(false);
 		frmProgramaDeOrganizacin.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
 		
 		comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(136, 143, 164, 20);
 		comboBox_1.setVisible(false);
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Nivel de importancia", "Prioridad", "Secundario"}));
-		comboBox_1.setBounds(136, 143, 164, 20);
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox_1);
 		
 		modo = new JToggleButton("Modo Agregar");
+		modo.setBounds(333, 142, 121, 23);
 		modo.setForeground(Color.BLACK);
 		modo.setBackground(Color.GREEN);
 		modo.addActionListener(new ActionListener() {
@@ -699,26 +749,25 @@ public class Main {
 			}
 		});
 		modo.setVisible(false);
-		modo.setBounds(333, 142, 121, 23);
 		frmProgramaDeOrganizacin.getContentPane().add(modo);
 		
 		textField_5 = new JTextField();
-		textField_5.setVisible(false);
 		textField_5.setBounds(179, 174, 32, 20);
+		textField_5.setVisible(false);
 		frmProgramaDeOrganizacin.getContentPane().add(textField_5);
 		textField_5.setColumns(10);
 		
 		opnumero = new JLabel("Opcion:");
-		opnumero.setVisible(false);
 		opnumero.setBounds(136, 177, 46, 14);
+		opnumero.setVisible(false);
 		frmProgramaDeOrganizacin.getContentPane().add(opnumero);
 		
 		editorPane2 = new JEditorPane();
+		editorPane2.setBounds(154, 71, 259, 275);
 		editorPane2.setEditable(false);
 		editorPane2.setBackground(new Color(255, 140, 0));
 		editorPane2.setVisible(false);
 		editorPane2.setForeground(new Color(0, 0, 0));
-		editorPane2.setBounds(154, 71, 259, 275);
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
 	}
 }
