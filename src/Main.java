@@ -48,7 +48,7 @@ public class Main {
 	private JLabel Carnet;
 	private JLabel Semestre;
 	private JLabel lblAoEnCurso;
-	private JLabel lblNewLabel_1;
+	private JLabel lblCarrera;
 	private JLabel lblCarnet;
 	private JLabel lblNombre; 
 	private JComboBox comboBox;
@@ -59,6 +59,7 @@ public class Main {
 	private JLabel opnumero;
 	private JToggleButton modo;
 	private JEditorPane editorPane2;
+	private JButton btnRedes;
 	
 
 	public void salir()
@@ -178,7 +179,7 @@ public class Main {
 		frmProgramaDeOrganizacin = new JFrame();
 		frmProgramaDeOrganizacin.setTitle("Programa de organizaci\u00F3n de estudiantes");
 		frmProgramaDeOrganizacin.getContentPane().setBackground(new Color(255, 255, 153));
-		frmProgramaDeOrganizacin.setBounds(100, 100, 835, 441);
+		frmProgramaDeOrganizacin.setBounds(100, 100, 844, 470);
 		frmProgramaDeOrganizacin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		crearText();
@@ -249,7 +250,7 @@ public class Main {
 				editorPane.setText("Recordatorios secundarios"+"\n"+recordatorio.mostrarRecordatorio(2));
 				editorPane2.setVisible(true);
 				editorPane2.setText("Recordatorios de prioridad"+"\n"+recordatorio.mostrarRecordatorio(1));
-				lblNewLabel_1.setVisible(false);
+				lblCarrera.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -291,7 +292,7 @@ public class Main {
 				textField_4.setVisible(false);
 				editorPane.setVisible(false);
 				editorPane2.setVisible(false);
-				lblNewLabel_1.setVisible(false);
+				lblCarrera.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -334,7 +335,7 @@ public class Main {
 					textField_4.setVisible(true);
 					editorPane.setVisible(false);
 					editorPane2.setVisible(false);
-					lblNewLabel_1.setVisible(false);
+					lblCarrera.setVisible(false);
 					for(int i=0;i<7;i++)
 					{
 						for(int j=0;j<11;j++)
@@ -378,8 +379,8 @@ public class Main {
 				editorPane.setVisible(true);
 				editorPane.setText("");
 				editorPane2.setVisible(false);
-				lblNewLabel_1.setText("Ingrese un evento");
-				lblNewLabel_1.setVisible(true);
+				lblCarrera.setText("Ingrese un evento");
+				lblCarrera.setVisible(true);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -404,14 +405,43 @@ public class Main {
 		btnAgenda.setDefaultCapable(false);
 		panel_1.add(btnAgenda);
 		
-		JButton Salir = new JButton("Salir");
-		Salir.addActionListener(new ActionListener() {
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBackground(Color.WHITE);
+		btnSalir.setBorderPainted(false);
+		btnSalir.setContentAreaFilled(false);
+		btnSalir.setDefaultCapable(false);
+		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				salir();
 			}
 		});
-		Salir.setBounds(13, 328, 117, 29);
-		panel_1.add(Salir);
+		btnSalir.setBounds(-5, 318, 133, 29);
+		panel_1.add(btnSalir);
+		
+		btnRedes = new JButton("Redes Sociales");
+		btnRedes.setBackground(new Color(240, 240, 240));
+		btnRedes.setBorderPainted(false);
+		btnRedes.setContentAreaFilled(false);
+		btnRedes.setDefaultCapable(false);
+		btnRedes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblNewLabel.setVisible(false);
+				lblNombre.setVisible(false);
+				lblCarnet.setVisible(false);
+				lblAoEnCurso.setVisible(false);
+				lblCarrera.setVisible(false);
+				
+				
+			}
+		});
+		
+		
+		
+		
+		btnRedes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRedes.setBounds(0, 144, 126, 42);
+		panel_1.add(btnRedes);
 		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(720, 368, 89, 23);
@@ -433,7 +463,7 @@ public class Main {
 					textField_2.setVisible(false);
 					textField_3.setVisible(false);
 					lblAoEnCurso.setVisible(false);
-					lblNewLabel_1.setVisible(false);
+					lblCarrera.setVisible(false);
 					lblCarnet.setVisible(false);
 					lblNombre.setVisible(false);
 					btnGuardar.setVisible(false);
@@ -606,10 +636,10 @@ public class Main {
 		frmProgramaDeOrganizacin.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		lblNewLabel_1 = new JLabel("Carrera:");
-		lblNewLabel_1.setBounds(144, 87, 118, 14);
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		frmProgramaDeOrganizacin.getContentPane().add(lblNewLabel_1);
+		lblCarrera = new JLabel("Carrera:");
+		lblCarrera.setBounds(144, 87, 118, 14);
+		lblCarrera.setFont(new Font("Arial", Font.PLAIN, 12));
+		frmProgramaDeOrganizacin.getContentPane().add(lblCarrera);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(194, 85, 224, 20);
