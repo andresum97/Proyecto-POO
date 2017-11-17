@@ -5,17 +5,23 @@
  * @author Guillermo Sandoval
  * @version 29/09/17	
  */
-
-
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Embedded;
+@Entity
 public class Agenda {
+	@Id private ObjectId id; 
+	@Embedded
 	private String[] agenda; //Array para poder guardar los eventos
 	/**
 	 * Constructor de la clase
 	 */
-	public Agenda()
+	public Agenda() {}
+	public Agenda(int x)
 	{
-		agenda = new String[8];
-		for(int i=0;i<8;i++)
+		agenda = new String[x];
+		for(int i=0;i<x;i++)
 		{
 			agenda[i] = "";
 		}

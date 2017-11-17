@@ -8,16 +8,22 @@
 
 
 import java.util.ArrayList;
-
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Embedded;
+@Entity
 public class Recordatorio {
-	
+	@Id private ObjectId id; 
+	@Embedded
 	private ArrayList <String> prioridad; //Arraylist para guardar recordatorios de prioridad
 	private ArrayList <String> secundario; //Arraylist para guardar recordatorios secundarios
 	
 	/**
 	 * Constructor de la clase
 	 */
-	public Recordatorio()
+	public Recordatorio() {}
+	public Recordatorio(int x)
 	{
 		prioridad= new ArrayList<String>();
 		secundario= new ArrayList<String>();
