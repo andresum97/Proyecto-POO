@@ -465,10 +465,13 @@ public class Main {
 				lblAoEnCurso.setVisible(false);
 				lblCarrera.setVisible(false);
 				
+				
 				comboBox_2.setVisible(true);
 				comboBox_3.setVisible(true);
 				btnInicio.setVisible(true);
 				textField_6.setVisible(true);
+				
+				
 				
 			}
 		});	
