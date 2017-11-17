@@ -33,9 +33,10 @@ public class Main {
 	private JLabel[] l = new JLabel[11];
 	private JLabel[] d = new JLabel[7];
 	private int opcion = 0;
-	private Horario horario = new Horario();
-	private Agenda agenda = new Agenda();
-	private Recordatorio recordatorio = new Recordatorio();
+	private Horario horario = new Horario(7,11);
+	private Agenda agenda = new Agenda(8);
+	private Database database = new Database();
+	private Recordatorio recordatorio = new Recordatorio(0);
 	private JButton btnGuardar;
 	private JButton btnMostrar;
 	private JButton btnModificar;

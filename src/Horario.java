@@ -10,16 +10,24 @@
 >>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
  */
 
-public class Horario {
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Embedded;
+@Entity
+public  class Horario {
+	@Id private ObjectId id; 
+	@Embedded
 	private String[][] clases; //Matr�z para guardar las clases
 	/**
 	 * Constructor de la clase
 	 */
-	public Horario()
+	public Horario(){ }
+	public Horario(int x,int y)
 	{
-		clases = new String[7][11];
-		for (int j=0;j<7;j++){
-			for(int i=0;i<11;i++){
+		clases = new String[x][y];
+		for (int j=0;j<x;j++){
+			for(int i=0;i<y;i++){
 				clases[j][i]=" ";
 			}
 		}

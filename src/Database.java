@@ -1,11 +1,12 @@
-
+/**
+ * Clase de Database, donde se trabaja todo lo mongo
+ */
 
 import java.util.List;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.query.Query;
-import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
 
@@ -13,13 +14,13 @@ public class Database {
 	private MongoClient mongo;
     private Morphia morphia;
     private Datastore datoscalendario;
-    private DB db;
     public Database()
     {
     try
     {
          mongo = new MongoClient("localhost",27017);
          morphia = new Morphia();
+         morphia.map(Horario.class);
          morphia.mapPackage("(default package)");
          datoscalendario = morphia.createDatastore(mongo, "Horario");
     	System.out.println("Connect to Database");
@@ -30,7 +31,6 @@ public class Database {
     }
    
     public Horario[][] cargar(){
-    	int cont = 0;
     	morphia.mapPackage("(default package)");
     	Horario[][] hor = new Horario[11][7];
     	Query<Horario> query = datoscalendario.createQuery(Horario.class);
@@ -43,5 +43,15 @@ public class Database {
         } 
     }
         return hor;
+    }
+    public void guardar(Horario[][] hor) {
+    	Horario x; 
+    	for (int j=0;j<7;j++){
+			for(int i=0;i<11;i++) {
+				x = hor[j][i];
+				datoscalendario.save(x);
+			}
+		
+    }
     }
 }
