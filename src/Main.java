@@ -26,6 +26,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JEditorPane;
 import javax.swing.JToggleButton;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JRadioButton;
 
 public class Main {
 
@@ -63,6 +64,7 @@ public class Main {
 	private JEditorPane editorPane2;
 	private JButton btnRedes;
 	private JComboBox comboBoxTiempo;
+	private JRadioButton rdbtnFacebook;
 	
 
 	public void salir()
@@ -254,6 +256,7 @@ public class Main {
 				editorPane2.setVisible(true);
 				editorPane2.setText("Recordatorios de prioridad"+"\n"+recordatorio.mostrarRecordatorio(1));
 				lblCarrera.setVisible(false);
+				rdbtnFacebook.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -296,6 +299,7 @@ public class Main {
 				editorPane.setVisible(false);
 				editorPane2.setVisible(false);
 				lblCarrera.setVisible(false);
+				rdbtnFacebook.setVisible(false);
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -339,6 +343,7 @@ public class Main {
 					editorPane.setVisible(false);
 					editorPane2.setVisible(false);
 					lblCarrera.setVisible(false);
+					rdbtnFacebook.setVisible(false);
 					for(int i=0;i<7;i++)
 					{
 						for(int j=0;j<11;j++)
@@ -384,6 +389,8 @@ public class Main {
 				editorPane2.setVisible(false);
 				lblCarrera.setText("Ingrese un evento");
 				lblCarrera.setVisible(true);
+				rdbtnFacebook.setVisible(false);
+				
 				for(int i=0;i<7;i++)
 				{
 					for(int j=0;j<11;j++)
@@ -438,6 +445,7 @@ public class Main {
 				editorPane.setVisible(false);
 				
 				comboBoxTiempo.setVisible(true);
+				rdbtnFacebook.setVisible(true);
 				
 			}
 		});
@@ -781,17 +789,9 @@ public class Main {
 		editorPane2.setForeground(new Color(0, 0, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(278, 280, 36, 26);
-		frmProgramaDeOrganizacin.getContentPane().add(comboBox_2);
-		
-		JRadioButtonMenuItem rdbtnmntmFacebook = new JRadioButtonMenuItem("Facebook");
-		rdbtnmntmFacebook.setBounds(144, 362, 173, 31);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnmntmFacebook);
-		
-		JRadioButtonMenuItem rdbtnmntmInstagram = new JRadioButtonMenuItem("Instagram");
-		rdbtnmntmInstagram.setBounds(141, 280, 173, 31);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnmntmInstagram);
+		rdbtnFacebook = new JRadioButton("Facebook");
+		rdbtnFacebook.setBounds(137, 260, 155, 29);
+		frmProgramaDeOrganizacin.getContentPane().add(rdbtnFacebook);
 		
 		
 	}

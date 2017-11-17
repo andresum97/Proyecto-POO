@@ -90,6 +90,13 @@ finally {
 		long fin = System.nanoTime(); 
 		long tiempoTranscurrido = inicio - fin;
 		double segundos = (double)tiempoTranscurrido / 1000000000.0;
+		long startTime = System.currentTimeMillis();
+		long elapsedTime = 0L;
+
+		while (elapsedTime < 2*60*1000) {
+		    //perform db poll/check
+		    elapsedTime = (new Date()).getTime() - startTime;
+		}
 	}
 	public void timerTwit(String tI, String tF)
 	{
