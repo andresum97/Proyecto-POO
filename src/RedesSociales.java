@@ -68,8 +68,11 @@ finally {
 	 * ha transcurrido en cada una de las redes sociales ya que estos solo se pueden
 	 * utilizar una vez maximo
 	 */
-	public void timerFB()
+	public void timerFB(String tI, String tF)
 	{
+		/*
+		 * Aqui va la parte donde le ingresan ambos tiempos
+		 */
 		long inicio = System.nanoTime(); 
 		long fin = System.nanoTime(); 
 		long tiempoTranscurrido = inicio - fin;
@@ -77,12 +80,25 @@ finally {
 		
 		
 	}
-	public void timerInst()
+	public void timerInst(String tI, String tF)
 	{
 		
+		/*
+		 * Aqui va la parte donde le ingresan ambos tiempos
+		 */
+		long inicio = System.nanoTime(); 
+		long fin = System.nanoTime(); 
+		long tiempoTranscurrido = inicio - fin;
+		double segundos = (double)tiempoTranscurrido / 1000000000.0;
 	}
-	public void timerTwit()
+	public void timerTwit(String tI, String tF)
 	{
-		
+		/*
+		 * Aqui va la parte donde le ingresan ambos tiempos
+		 */
+		long inicio = System.nanoTime(); 
+		long fin = System.nanoTime(); 
+		long tiempoTranscurrido = inicio - fin;
+		double segundos = (double)tiempoTranscurrido / 1000000000.0;
 	}
 }
