@@ -7,7 +7,6 @@ import java.util.List;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.query.Query;
-import com.mongodb.DB;
 import com.mongodb.MongoClient;
 
 
@@ -15,13 +14,13 @@ public class Database {
 	private MongoClient mongo;
     private Morphia morphia;
     private Datastore datoscalendario;
-    private DB db;
     public Database()
     {
     try
     {
          mongo = new MongoClient("localhost",27017);
          morphia = new Morphia();
+         morphia.map(Horario.class);
          morphia.mapPackage("(default package)");
          datoscalendario = morphia.createDatastore(mongo, "Horario");
     	System.out.println("Connect to Database");
