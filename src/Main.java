@@ -484,7 +484,7 @@ public class Main {
 						{
 							clase = t[i][j].getText();
 							horario.ingresarClase(i, j, clase);
-							database.guardar(horario);
+							database.guardarHorario(horario);
 						}
 					}
 					for(int i=0;i<7;i++)
@@ -505,6 +505,7 @@ public class Main {
 					{
 					String texto = textField_4.getText();
 					agenda.ingresarEvento(comboBox.getSelectedIndex(), texto);
+					database.guardarAgenda(agenda);
 					JOptionPane.showMessageDialog(null, "Ha sido guardado con exito");
 					editorPane.setText(agenda.mostrarEvento(comboBox.getSelectedIndex()));
 					textField_4.setText("");
@@ -519,6 +520,7 @@ public class Main {
 					{
 						String texto = textField_4.getText();
 						recordatorio.ingresarRecordatorio(texto, comboBox_1.getSelectedIndex());
+						database.guardarRecordatorio(recordatorio);
 						JOptionPane.showMessageDialog(null, "Ha sido guardado con exito");
 						textField_4.setText("");
 					}

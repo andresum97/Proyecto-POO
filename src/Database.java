@@ -15,6 +15,8 @@ public class Database {
 	private MongoClient mongo;
     private Morphia morphia;
     private Datastore datoscalendario;
+    private Datastore datosagenda;
+    private Datastore datosrecord;
     public Database()
     {
     try
@@ -24,6 +26,8 @@ public class Database {
          morphia.map(Horario.class);
          morphia.mapPackage("(default package)");
          datoscalendario = morphia.createDatastore(mongo, "Horario");
+         datosagenda = morphia.createDatastore(mongo, "Agenda");
+         datosrecord = morphia.createDatastore(mongo, "Recordatorios");
     	System.out.println("Connect to Database");
     }catch(Exception e)
     {
@@ -55,8 +59,16 @@ public class Database {
 		
     }
     }*/
-    public void guardar(Horario hor)
+    public void guardarHorario(Horario hor)
     {
     	datoscalendario.save(hor);
+    }
+    public void guardarAgenda(Agenda agenda)
+    {
+    	datosagenda.save(agenda);
+    }
+    public void guardarRecordatorio(Recordatorio record)
+    {
+    	datosrecord.save(record);
     }
 }
