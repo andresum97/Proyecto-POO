@@ -25,7 +25,6 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JEditorPane;
 import javax.swing.JToggleButton;
-import javax.swing.JRadioButtonMenuItem;
 
 public class Main {
 
@@ -62,7 +61,6 @@ public class Main {
 	private JToggleButton modo;
 	private JEditorPane editorPane2;
 	private JButton btnRedes;
-	private JComboBox comboBoxTiempo;
 	
 
 	public void salir()
@@ -434,10 +432,7 @@ public class Main {
 				lblCarnet.setVisible(false);
 				lblAoEnCurso.setVisible(false);
 				lblCarrera.setVisible(false);
-				editorPane2.setVisible(false);
-				editorPane.setVisible(false);
 				
-				comboBoxTiempo.setVisible(true);
 				
 			}
 		});
@@ -489,6 +484,7 @@ public class Main {
 						{
 							clase = t[i][j].getText();
 							horario.ingresarClase(i, j, clase);
+							database.guardar(horario);
 						}
 					}
 					for(int i=0;i<7;i++)
@@ -722,11 +718,6 @@ public class Main {
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Nivel de importancia", "Prioridad", "Secundario"}));
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox_1);
 		
-		comboBoxTiempo = new JComboBox();
-		comboBoxTiempo.setModel(new DefaultComboBoxModel(new String[] {"Tiempo para utilizar", "5", "10", "15"}));
-		comboBoxTiempo.setBounds(136, 222, 180, 26);
-		frmProgramaDeOrganizacin.getContentPane().add(comboBoxTiempo);
-		
 		modo = new JToggleButton("Modo Agregar");
 		modo.setBounds(333, 142, 121, 23);
 		modo.setForeground(Color.BLACK);
@@ -780,19 +771,5 @@ public class Main {
 		editorPane2.setVisible(false);
 		editorPane2.setForeground(new Color(0, 0, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(278, 280, 36, 26);
-		frmProgramaDeOrganizacin.getContentPane().add(comboBox_2);
-		
-		JRadioButtonMenuItem rdbtnmntmFacebook = new JRadioButtonMenuItem("Facebook");
-		rdbtnmntmFacebook.setBounds(144, 362, 173, 31);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnmntmFacebook);
-		
-		JRadioButtonMenuItem rdbtnmntmInstagram = new JRadioButtonMenuItem("Instagram");
-		rdbtnmntmInstagram.setBounds(141, 280, 173, 31);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnmntmInstagram);
-		
-		
 	}
 }

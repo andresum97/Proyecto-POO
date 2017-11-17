@@ -52,4 +52,8 @@ public  class Horario {
 	{
 		return clases[dia][hora];
 	}
+	public String[][] getDatos()
+	{
+		return clases;
+	}
 }

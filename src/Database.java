@@ -7,6 +7,7 @@ import java.util.List;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.query.Query;
+
 import com.mongodb.MongoClient;
 
 
@@ -44,7 +45,7 @@ public class Database {
     }
         return hor;
     }
-    public void guardar(Horario[][] hor) {
+  /**  public void guardar(Horario[][] hor) {
     	Horario x; 
     	for (int j=0;j<7;j++){
 			for(int i=0;i<11;i++) {
@@ -53,5 +54,9 @@ public class Database {
 			}
 		
     }
+    }*/
+    public void guardar(Horario hor)
+    {
+    	datoscalendario.save(hor);
     }
 }
