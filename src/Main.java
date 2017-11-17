@@ -28,6 +28,7 @@ import javax.swing.JToggleButton;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JRadioButton;
 
+
 public class Main {
 
 	private JFrame frmProgramaDeOrganizacin;
@@ -65,6 +66,7 @@ public class Main {
 	private JButton btnRedes;
 	private JComboBox comboBoxTiempo;
 	private JRadioButton rdbtnFacebook;
+
 	
 
 	public void salir()
@@ -441,11 +443,12 @@ public class Main {
 				lblCarnet.setVisible(false);
 				lblAoEnCurso.setVisible(false);
 				lblCarrera.setVisible(false);
-				editorPane2.setVisible(false);
-				editorPane.setVisible(false);
 				
+<<<<<<< HEAD
 				comboBoxTiempo.setVisible(true);
 				rdbtnFacebook.setVisible(true);
+=======
+>>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
 				
 			}
 		});
@@ -497,6 +500,7 @@ public class Main {
 						{
 							clase = t[i][j].getText();
 							horario.ingresarClase(i, j, clase);
+							database.guardarHorario(horario);
 						}
 					}
 					for(int i=0;i<7;i++)
@@ -517,6 +521,7 @@ public class Main {
 					{
 					String texto = textField_4.getText();
 					agenda.ingresarEvento(comboBox.getSelectedIndex(), texto);
+					database.guardarAgenda(agenda);
 					JOptionPane.showMessageDialog(null, "Ha sido guardado con exito");
 					editorPane.setText(agenda.mostrarEvento(comboBox.getSelectedIndex()));
 					textField_4.setText("");
@@ -531,6 +536,7 @@ public class Main {
 					{
 						String texto = textField_4.getText();
 						recordatorio.ingresarRecordatorio(texto, comboBox_1.getSelectedIndex());
+						database.guardarRecordatorio(recordatorio);
 						JOptionPane.showMessageDialog(null, "Ha sido guardado con exito");
 						textField_4.setText("");
 					}
@@ -730,11 +736,6 @@ public class Main {
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Nivel de importancia", "Prioridad", "Secundario"}));
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox_1);
 		
-		comboBoxTiempo = new JComboBox();
-		comboBoxTiempo.setModel(new DefaultComboBoxModel(new String[] {"Tiempo para utilizar", "5", "10", "15"}));
-		comboBoxTiempo.setBounds(136, 222, 180, 26);
-		frmProgramaDeOrganizacin.getContentPane().add(comboBoxTiempo);
-		
 		modo = new JToggleButton("Modo Agregar");
 		modo.setBounds(333, 142, 121, 23);
 		modo.setForeground(Color.BLACK);
@@ -788,11 +789,14 @@ public class Main {
 		editorPane2.setVisible(false);
 		editorPane2.setForeground(new Color(0, 0, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
+<<<<<<< HEAD
 		
 		rdbtnFacebook = new JRadioButton("Facebook");
 		rdbtnFacebook.setBounds(137, 260, 155, 29);
 		frmProgramaDeOrganizacin.getContentPane().add(rdbtnFacebook);
 		
 		
+=======
+>>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
 	}
 }
