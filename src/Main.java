@@ -66,6 +66,10 @@ public class Main {
 	private JButton btnRedes;
 	private JComboBox comboBoxTiempo;
 	private JRadioButton rdbtnFacebook;
+	private JComboBox comboBox_2;
+	private JRadioButton rdbtnFacebook_1;
+	private JRadioButton rdbtnTwitter;
+	private JRadioButton rdbtnInstagram;
 
 	
 
@@ -391,7 +395,12 @@ public class Main {
 				editorPane2.setVisible(false);
 				lblCarrera.setText("Ingrese un evento");
 				lblCarrera.setVisible(true);
+				
+				
 				rdbtnFacebook.setVisible(false);
+				rdbtnFacebook_1.setVisible(false);
+				rdbtnInstagram.setVisible(false);
+				rdbtnTwitter.setVisible(false);
 				
 				for(int i=0;i<7;i++)
 				{
@@ -784,5 +793,22 @@ public class Main {
 		editorPane2.setVisible(false);
 		editorPane2.setForeground(new Color(0, 0, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
+		
+		comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tiempo para asignar", "5 minutos", "10 minutos", "15 minutos"}));
+		comboBox_2.setBounds(141, 216, 187, 26);
+		frmProgramaDeOrganizacin.getContentPane().add(comboBox_2);
+		
+		rdbtnFacebook_1 = new JRadioButton("Facebook");
+		rdbtnFacebook_1.setBounds(137, 254, 155, 29);
+		frmProgramaDeOrganizacin.getContentPane().add(rdbtnFacebook_1);
+		
+		rdbtnTwitter = new JRadioButton("Twitter");
+		rdbtnTwitter.setBounds(137, 291, 155, 29);
+		frmProgramaDeOrganizacin.getContentPane().add(rdbtnTwitter);
+		
+		rdbtnInstagram = new JRadioButton("Instagram");
+		rdbtnInstagram.setBounds(137, 328, 155, 29);
+		frmProgramaDeOrganizacin.getContentPane().add(rdbtnInstagram);
 	}
 }
