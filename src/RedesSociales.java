@@ -12,6 +12,8 @@
  */
 
 import java.util.Timer;
+import java.io.*;
+import java.util.concurrent.*; 
 
 public class RedesSociales {
 	/*
@@ -39,7 +41,6 @@ public class RedesSociales {
 
 try {
     Runnable r = new Runnable() {
-        @Override
         public void run() {
             // Database task
         }
@@ -69,8 +70,12 @@ finally {
 	 */
 	public void timerFB()
 	{
-		timer.schedule(new TimerTask() {
-			}, 2*60*1000);	
+		long inicio = System.nanoTime(); 
+		long fin = System.nanoTime(); 
+		long tiempoTranscurrido = inicio - fin;
+		double segundos = (double)tiempoTranscurrido / 1000000000.0;
+		
+		
 	}
 	public void timerInst()
 	{
