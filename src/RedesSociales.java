@@ -12,6 +12,7 @@
  */
 
 import java.util.Timer;
+import java.util.TimerTask;
 import java.io.*;
 import java.util.concurrent.*; 
 
@@ -33,79 +34,48 @@ public class RedesSociales {
 	
 	public RedesSociales()
 	{
-		Timer timer = new Timer();	
+		
 	}
 	
-/*
- * ExecutorService service = Executors.newSingleThreadExecutor();
-
-try {
-    Runnable r = new Runnable() {
-        public void run() {
-            // Database task
-        }
-    };
-
-    Future<?> f = service.submit(r);
-
-    f.get(2, TimeUnit.MINUTES);     // attempt the task for two minutes
-}
-catch (final InterruptedException e) {
-    // The thread was interrupted during sleep, wait or join
-}
-catch (final TimeoutException e) {
-    // Took too long!
-}
-catch (final ExecutionException e) {
-    // An exception from within the Runnable task
-}
-finally {
-    service.shutdown();
-}
- */
-	/*
-	 * Basicamente cada uno de los timer se encarga de guardar cuanto tiempo
-	 * ha transcurrido en cada una de las redes sociales ya que estos solo se pueden
-	 * utilizar una vez maximo
-	 */
-	public void timerFB(String tI, String tF)
-	{
-		/*
-		 * Aqui va la parte donde le ingresan ambos tiempos
-		 */
-		long inicio = System.nanoTime(); 
-		long fin = System.nanoTime(); 
-		long tiempoTranscurrido = inicio - fin;
-		double segundos = (double)tiempoTranscurrido / 1000000000.0;
-		
-		
-	}
-	public void timerInst(String tI, String tF)
-	{
-		
-		/*
-		 * Aqui va la parte donde le ingresan ambos tiempos
-		 */
-		long inicio = System.nanoTime(); 
-		long fin = System.nanoTime(); 
-		long tiempoTranscurrido = inicio - fin;
-		double segundos = (double)tiempoTranscurrido / 1000000000.0;
-		long startTime = System.currentTimeMillis();
-		long elapsedTime = 0L;
-
-		while (elapsedTime < 2*60*1000) {
-		    //perform db poll/check
-		    elapsedTime = (new Date()).getTime() - startTime;
+	int segundos =0;
+	Timer temporizador = new Timer();
+	TimerTask task = new TimerTask() {
+		public void run() {
+			segundos++;
 		}
-	}
-	public void timerTwit(String tI, String tF)
+	};
+	
+
+	public void timerFB()
 	{
 		/*
 		 * Aqui va la parte donde le ingresan ambos tiempos
 		 */
-		long inicio = System.nanoTime(); 
-		long fin = System.nanoTime(); 
-		long tiempoTranscurrido = inicio - fin;
-		double segundos = (double)tiempoTranscurrido / 1000000000.0;
+		//long inicio = System.nanoTime(); 
+		//long fin = System.nanoTime(); 
+		//long tiempoTranscurrido = inicio - fin;
+		//double segundos = (double)tiempoTranscurrido / 1000000000.0;
+		
+		/*
+		 * Timer que suma en segundos 1 a 1
+		 */
+		temporizador.scheduleAtFixedRate(task,1000,1000);
+
+	}
+	public void timerInst()
+	{		
+		/*
+		 * Timer que suma en segundos 1 a 1
+		 */
+		temporizador.scheduleAtFixedRate(task,1000,1000);
+		
+		
+	}
+	public void timerTwit()
+	{
+		/*
+		 * Timer que suma en segundos 1 a 1
+		 */
+		temporizador.scheduleAtFixedRate(task,1000,1000);
 	}
 }

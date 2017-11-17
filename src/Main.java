@@ -67,10 +67,9 @@ public class Main {
 	private JComboBox comboBoxTiempo;
 	private JRadioButton rdbtnFacebook;
 	private JComboBox comboBox_2;
-	private JRadioButton rdbtnFacebook_1;
-	private JRadioButton rdbtnTwitter;
-	private JRadioButton rdbtnInstagram;
-
+	private JComboBox comboBox_3;
+	private JTextField textField_6;
+	private JButton btnInicio;
 	
 
 	public void salir()
@@ -440,29 +439,41 @@ public class Main {
 		panel_1.add(btnSalir);
 		
 		btnRedes = new JButton("Redes Sociales");
+		btnRedes.setBounds(6, 141, 126, 42);
+		panel_1.add(btnRedes);
 		btnRedes.setBackground(new Color(240, 240, 240));
 		btnRedes.setBorderPainted(false);
 		btnRedes.setContentAreaFilled(false);
 		btnRedes.setDefaultCapable(false);
 		btnRedes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				comboBox_1.setVisible(true);
+				opcion = 3;
+				modo.setVisible(false);
+				btnModificar.setVisible(false);
+				btnMostrar.setVisible(false);
+				btnGuardar.setVisible(false);
+				comboBox.setVisible(false);
+				textField_4.setVisible(false);
+				editorPane.setVisible(false);
+				editorPane2.setVisible(false);
+				lblCarrera.setVisible(false);
+				rdbtnFacebook.setVisible(false);
 				lblNewLabel.setVisible(false);
 				lblNombre.setVisible(false);
 				lblCarnet.setVisible(false);
 				lblAoEnCurso.setVisible(false);
 				lblCarrera.setVisible(false);
 				
+				comboBox_2.setVisible(true);
+				comboBox_3.setVisible(true);
+				btnInicio.setVisible(true);
+				textField_6.setVisible(true);
 				
 			}
-		});
-		
-		
-		
-		
+		});	
 		btnRedes.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRedes.setBounds(0, 144, 126, 42);
-		panel_1.add(btnRedes);
+		
 		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(720, 368, 89, 23);
@@ -721,12 +732,7 @@ public class Main {
 		comboBox.setToolTipText("");
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox);
 		
-		editorPane = new JEditorPane();
-		editorPane.setBounds(451, 71, 259, 275);
-		editorPane.setBackground(new Color(0, 191, 255));
-		editorPane.setVisible(false);
-		editorPane.setEditable(false);
-		frmProgramaDeOrganizacin.getContentPane().add(editorPane);
+		
 		
 		textField_4 = new JTextField();
 		textField_4.setBounds(136, 112, 282, 20);
@@ -796,19 +802,51 @@ public class Main {
 		
 		comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tiempo para asignar", "5 minutos", "10 minutos", "15 minutos"}));
-		comboBox_2.setBounds(141, 216, 187, 26);
+		comboBox_2.setBounds(622, 140, 187, 26);
+		comboBox_2.setVisible(true);
 		frmProgramaDeOrganizacin.getContentPane().add(comboBox_2);
 		
-		rdbtnFacebook_1 = new JRadioButton("Facebook");
-		rdbtnFacebook_1.setBounds(137, 254, 155, 29);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnFacebook_1);
+		comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Red social", "Facebook", "Twitter", "Instagram"}));
+		comboBox_3.setBounds(650, 188, 159, 26);
+		comboBox_3.setVisible(true);
+		frmProgramaDeOrganizacin.getContentPane().add(comboBox_3);
 		
-		rdbtnTwitter = new JRadioButton("Twitter");
-		rdbtnTwitter.setBounds(137, 291, 155, 29);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnTwitter);
+		textField_6 = new JTextField();
+		textField_6.setEditable(false);
+		textField_6.setBounds(683, 240, 126, 26);
+		textField_6.setVisible(true);
+		frmProgramaDeOrganizacin.getContentPane().add(textField_6);
+		textField_6.setColumns(10);
 		
-		rdbtnInstagram = new JRadioButton("Instagram");
-		rdbtnInstagram.setBounds(137, 328, 155, 29);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnInstagram);
+		JButton btnInicio = new JButton("Inicio");
+		btnInicio.setVisible(true);
+		btnInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if(btnInicio.getText() == "Inicio")
+				{
+					btnInicio.setText("Parar");
+					RedesSociales tiempo = new RedesSociales();
+					tiempo.timerFB();
+					textField_6.setText(""+tiempo);
+				}
+				if(btnInicio.getText() == "Parar")
+				{
+					btnInicio.setText("Inicio");
+				}
+					
+				
+			}
+		});
+		btnInicio.setBounds(694, 282, 115, 29);
+		frmProgramaDeOrganizacin.getContentPane().add(btnInicio);
+		
+		editorPane = new JEditorPane();
+		editorPane.setBounds(451, 71, 259, 275);
+		editorPane.setBackground(new Color(0, 191, 255));
+		editorPane.setVisible(false);
+		editorPane.setEditable(false);
+		frmProgramaDeOrganizacin.getContentPane().add(editorPane);
 	}
 }
