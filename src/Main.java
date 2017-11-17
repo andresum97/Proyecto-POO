@@ -444,11 +444,6 @@ public class Main {
 				lblAoEnCurso.setVisible(false);
 				lblCarrera.setVisible(false);
 				
-<<<<<<< HEAD
-				comboBoxTiempo.setVisible(true);
-				rdbtnFacebook.setVisible(true);
-=======
->>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
 				
 			}
 		});
@@ -789,14 +784,5 @@ public class Main {
 		editorPane2.setVisible(false);
 		editorPane2.setForeground(new Color(0, 0, 0));
 		frmProgramaDeOrganizacin.getContentPane().add(editorPane2);
-<<<<<<< HEAD
-		
-		rdbtnFacebook = new JRadioButton("Facebook");
-		rdbtnFacebook.setBounds(137, 260, 155, 29);
-		frmProgramaDeOrganizacin.getContentPane().add(rdbtnFacebook);
-		
-		
-=======
->>>>>>> branch 'master' of https://github.com/andresum97/Proyecto-POO.git
 	}
 }
