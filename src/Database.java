@@ -1,4 +1,6 @@
-
+/**
+ * Clase de Database, donde se trabaja todo lo mongo
+ */
 
 import java.util.List;
 
@@ -30,7 +32,6 @@ public class Database {
     }
    
     public Horario[][] cargar(){
-    	int cont = 0;
     	morphia.mapPackage("(default package)");
     	Horario[][] hor = new Horario[11][7];
     	Query<Horario> query = datoscalendario.createQuery(Horario.class);
@@ -43,5 +44,15 @@ public class Database {
         } 
     }
         return hor;
+    }
+    public void guardar(Horario[][] hor) {
+    	Horario x; 
+    	for (int j=0;j<7;j++){
+			for(int i=0;i<11;i++) {
+				x = hor[j][i];
+				datoscalendario.save(x);
+			}
+		
+    }
     }
 }
